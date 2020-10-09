@@ -98,8 +98,11 @@ class Services{
     var pesan = data['message'];
     if (status == "true") {
       Navigator.pop(context);
-      Navigator.of(context).pushReplacement(
-          new MaterialPageRoute(builder: (BuildContext context) => new Home()));
+      Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(builder: (BuildContext context) => Home()),
+        ModalRoute.withName('/AddData'),
+      );
       Toast.show("$pesan", context,
           duration: 5, gravity: Toast.BOTTOM);
       sendNotification("Data baru ditambahkan", "Notif");

@@ -117,7 +117,7 @@ class _LoginScreenState extends State<LoginScreen> {
       child: RaisedButton(
         elevation: 5.0,
         onPressed: () {
-          validasi.validasi_login(context, cEmail.text, cPassword.text);
+          validasi.validasi_login(context, email, password);
         },
         padding: EdgeInsets.all(15.0),
         shape: RoundedRectangleBorder(
